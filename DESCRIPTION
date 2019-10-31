@@ -1,6 +1,6 @@
 Package: govspeakr
 Type: Package
-Title: Helps users to develop Reproducible Analtical Pipelines (RAP) by converting R markdown to the govspeak markdown language.
+Title: Convert standard markdown to govspeak markdown, for use in the development of Reproducible Analytical Pipelines (RAP)
 Version: 0.1.0
 Author: best-practice-and-impact <gsshelp@statistics.gov.uk>
 Maintainer: David Foster <david.foster@ons.gov.uk>
