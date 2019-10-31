@@ -2,7 +2,7 @@ Package: govspeakr
 Type: Package
 Title: Helps users to develop Reproducible Analtical Pipelines (RAP) by converting R markdown to the govspeak markdown language.
 Version: 0.1.0
-Author:
+Author: best-practice-and-impact <gsshelp@statistics.gov.uk>
 Maintainer: David Foster <david.foster@ons.gov.uk>
 Description: Converts markdown scripts to a govspeak markdown that can be uploaded directly to the Whitehall published on the gov.uk website.
 License: MIT
