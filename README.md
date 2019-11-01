@@ -1,4 +1,9 @@
 # govspeakr
+
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/best-practice-and-impact/govspeakr.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/govspeakr)
+<!-- badges: end -->
+
 > **WARNING**: Please note that this package is currently under development. To be updated when this package is ready for use,
 or to contribute, please get in touch.
 
