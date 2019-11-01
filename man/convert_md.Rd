@@ -2,16 +2,18 @@
 % Please edit documentation in R/utils.R
 \name{convert_md}
 \alias{convert_md}
-\title{Convert markdown file to Whitehall publishing format}
+\title{Convert standard markdown file to govspeak}
 \usage{
-convert_md(path, images_folder = "images")
+convert_md(path, images_folder = "images", remove_blocks = FALSE)
 }
 \arguments{
 \item{path}{string; filename (including path) to *.md file for conversion}
 
 \item{images_folder}{string; folder containing images for *.md file. Defaults
 to "images"}
+
+\item{remove_blocks}{bool; decision to remove block elements from *.md file}
 }
 \description{
-Convert markdown file to Whitehall (gov.uk) publishing format
+Convert markdown file to Whitehall publisher (gov.uk) govspeak markdown format
 }
