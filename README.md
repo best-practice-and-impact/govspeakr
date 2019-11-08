@@ -72,10 +72,11 @@ This file can be interpreted by the whitehall publisher, along with the images c
 
 ## What is converted by govspeakr
 
-Currently the following markdown elements are converted to govspeak:
+Currently the following markdown elements are converted to govspeak using `govspeak::convert_md()`:
 
 * Image references
 * Single line block quotes/callouts
-* R markdown titles
+* R markdown titles (from header)
+* (optional) removes remaining multiline blocks (i.e. within three backticks), including package warnings
 
 For other elements, please see the [guidance](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown) for preparation of markdown for the Whitehall publisher.
