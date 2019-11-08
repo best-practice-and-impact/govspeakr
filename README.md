@@ -1,5 +1,5 @@
 # govspeakr
-**WARNING**: Please note that this package is currently under development. To be updated when this package is ready for use, or to contribute, please get in touch.
+**ALPHA**: Please note that this package is the early stages of development.
 
 ## What is govspeakr?
 govspeakr is an R package that is designed to help users to develop
@@ -8,7 +8,8 @@ Specifically, it enables the user to convert markdown (\*.md) files to [govspeak
 which can be uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
 
 
-Govspeak markup uses a different notation to reference images within the document:
+Chiefly, govspeak markup uses a different notation to reference images within the document:
+
 ```
 Figure 1
 !!1
