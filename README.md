@@ -70,7 +70,7 @@ The converted \*.md file will be written to the original directory, with the fil
 This file can be interpreted by the whitehall publisher, along with the images contained in the images subdirectory.
 
 
-## What is converted by govspeakr
+## What is converted by govspeakr?
 
 Currently the following markdown elements are converted to govspeak using `govspeak::convert_md()`:
 
