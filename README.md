@@ -4,16 +4,17 @@
 [![Travis build status](https://travis-ci.org/best-practice-and-impact/govspeakr.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/govspeakr)
 <!-- badges: end -->
 
-> **APLHA**: Please note that this package is currently in early development. To be updated when this package is ready for use,
-or to contribute, please get in touch.
+**ALPHA**: Please note that this package is the early stages of development.
 
 ## What is govspeakr?
 govspeakr is an R package that is designed to help users to develop
 [Reproproducible Analytical Pipelines (RAP)](https://gss.civilservice.gov.uk/events/introduction-to-reproducible-analytical-pipelines-rap-2/).
-Specifically, it enables the user to convert markdown files to [govspeak markdown](http://govspeak-preview.herokuapp.com/guide),
-which can be directly uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
+Specifically, it enables the user to convert markdown (\*.md) files to [govspeak markdown](http://govspeak-preview.herokuapp.com/guide),
+which can be uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
 
-Govspeak markup uses a different notation for image location within the text, where images are numbered in order of appearance:
+
+Chiefly, govspeak markup uses a different notation to reference images within the document:
+
 ```
 Figure 1
 !!1
@@ -22,7 +23,7 @@ Figure 2
 !!2
 ```
 
-The `govspeakr::convert_md()` function converts the usual markdown format (below), to that shown above:
+The `govspeakr::convert_md()` function converts the standard markdown image reference format (below), to govspeak (above):
 
 ```
 Figure 1
@@ -35,10 +36,18 @@ Figure 2
 
 ## Usage
 
-The conversion acts on a markdown (\*.md) file only, so Rmarkdown (\*.Rmd) should first be converted to \*.md.
-This can be achieved using the YAML at the top of a \*.Rmd file, either outputing `md_document` or keeping the \*.md file
-produced when outputting a htlm or pdf document (i.e. using `keep_md: true`):
+Ensure that you title any R markdown code chunks that output images with numbers increasing in sequence according
+to order of appearance in the document. For example:
 
+* 1-mortality statistics; (outputs first image)
+* 2-AMR statistics; (outputs second image)
+* 3-AMR by sex; (outputs third image)
+
+Multiple images produced by a single chunk will be automatically numbered appropriately.
+
+The conversion acts on a markdown (\*.md) file only, so Rmarkdown (\*.Rmd) should first be converted to \*.md.
+This can be achieved using the YAML at the top of a \*.Rmd file, either outputing md_document or keeping the *.md produced
+when outputting a htlm or pdf document (i.e. using `keep_md: true`):
 
 ```
 ---
@@ -59,3 +68,14 @@ convert_md("C:Users/me/publications/statistical_publication.md", images_folder="
 
 The converted \*.md file will be written to the original directory, with the file name suffixed with "_converted".
 This file can be interpreted by the whitehall publisher, along with the images contained in the images subdirectory.
+
+
+## What is converted by govspeakr
+
+Currently the following markdown elements are converted to govspeak:
+
+* Image references
+* Single line block quotes/callouts
+* R markdown titles
+
+For other elements, please see the [guidance](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown) for preparation of markdown for the Whitehall publisher.

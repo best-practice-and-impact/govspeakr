@@ -1,5 +1,5 @@
 ---
-title: "How to prepare an *.md file for upload to gov.uk"
+title: "How to prepare a markdown (*.md) file for upload to gov.uk"
 output: 
   html_document:
     keep_md: true
@@ -20,12 +20,12 @@ opts_chunk$set(echo=FALSE,
 
 ## Introduction
 
-This template describes how to prepare a *.md file for upload to gov.uk. Guidance on md files for gov.uk can be found [here](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown).
+This template describes how to prepare a *.md file for upload to gov.uk. Examples of syntax are displayed below, though more  detailed guidance on producing md files for gov.uk can be found [here](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown).
 
 
 ## Instructions
 
-On its own, this template will not be able to produce the file required by publications. Knitting this template will create a html file as well as an md file. Once the md file is produced, the user will need to run `convert_md()` on the md file.[^1] 
+On its own, this template will not be able to produce the file required by publications. Knitting this R markdown template will create a html file as well as an markdown (md) file. Once the md file is produced, the user will need to run `convert_md()` on the md file.[^1] 
 
 It is important to recognise that the html file this template produces will not resemble the document that will appear on gov.uk. That formatting is done by the Whitehall publishing software, whose input is the md file that is produced here.
 
@@ -63,9 +63,9 @@ ggplot(df, aes(x = x, y = y)) +
 
 In the md file provided to Whitehall publisher, it is a requirement for the images to be inserted by typing: *!!n*, where *n* is a number refering to the order of the images (eg, !!1 is the first image, !!2 is the second image, and so on). Please title your code chunks using an increasing number sequence as the first part of the title in order for `convert_md()` to work. The subsequent string should have a meaningful name for the image. For example:
 
-* 1-mortality statistics; (first image)
-* 2-AMR statistics; (second image)
-* 3-AMR by sex; (third image)
+* 1-mortality statistics; (outputs first image)
+* 2-AMR statistics; (outputs second image)
+* 3-AMR by sex; (outputs third image)
 
 Note, multiple charts produced within the same chunk (like the example above) will be detected and labelled appropriately by `convert_md()`.
 
@@ -106,7 +106,7 @@ Links to urls are done like [this](https://www.gov.uk/guidance/how-to-publish-on
 
 It is also possible to link internally to another [section](#numbered-lists).
 
-Email addresses format when surrounded by <>: <email@domain.co.uk>.
+Email addresses format to links when surrounded by <>: <email@domain.co.uk>.
 
 
 ### Other syntax
@@ -118,7 +118,6 @@ Italics, bold and strikethroughs are unsupported on gov.uk
 superscript<sup>2</sup>
 
 subscript<sub>a,b,c</sub>
-
 
 ## Header 1
 
@@ -136,10 +135,7 @@ emdash: ---
 
 ellipsis: ...
 
-
->block quotes
-
->with two lines
+>Block quotes/callouts should be kept to one line in the md file. If they are long enough they will split accross multiple lines automatically by the Whitehall publisher.
 
 
 [^1]: The reason the md file can't be used directly as a result of knitting this document is because the code to insert an image using the Whitehall publishing software is different from traditional Markdown code.
