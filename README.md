@@ -4,7 +4,7 @@
 [![Travis build status](https://travis-ci.org/best-practice-and-impact/govspeakr.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/govspeakr)
 <!-- badges: end -->
 
-> **WARNING**: Please note that this package is currently under development. To be updated when this package is ready for use,
+> **APLHA**: Please note that this package is currently in early development. To be updated when this package is ready for use,
 or to contribute, please get in touch.
 
 ## What is govspeakr?
@@ -35,9 +35,9 @@ Figure 2
 
 ## Usage
 
-The conversion acts on a markdown (*.md) file only, so Rmarkdown (*.Rmd) should first be converted to *.md.
-This can be achieved using the YAML at the top of a *.Rmd file, either outputing `md_document` or keeping the *.md produced
-when outputting a htlm or pdf document (`keep_md: true`):
+The conversion acts on a markdown (\*.md) file only, so Rmarkdown (\*.Rmd) should first be converted to \*.md.
+This can be achieved using the YAML at the top of a \*.Rmd file, either outputing `md_document` or keeping the \*.md file
+produced when outputting a htlm or pdf document (i.e. using `keep_md: true`):
 
 
 ```
@@ -49,7 +49,7 @@ output:
 ---
 ```
 
-The `govspeakr::convert_md()` function accepts a path to a *.md file, along with the name of the subdirectory that contains the
+The `govspeakr::convert_md()` function accepts a path to a \*.md file, along with the name of the subdirectory that contains the
 images required to produce the document.The images_folder parameter defaults to "images/", so other directory names must be specified
 as below:
 
@@ -57,5 +57,5 @@ as below:
 convert_md("C:Users/me/publications/statistical_publication.md", images_folder="figures")
 ```
 
-The converted *.md file will be written to the original directory, with the file name suffixed with "_converted".
+The converted \*.md file will be written to the original directory, with the file name suffixed with "_converted".
 This file can be interpreted by the whitehall publisher, along with the images contained in the images subdirectory.
