@@ -1,4 +1,9 @@
 # govspeakr
+
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/best-practice-and-impact/govspeakr.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/govspeakr)
+<!-- badges: end -->
+
 **ALPHA**: Please note that this package is the early stages of development.
 
 ## What is govspeakr?
@@ -42,8 +47,7 @@ Multiple images produced by a single chunk will be automatically numbered approp
 
 The conversion acts on a markdown (\*.md) file only, so Rmarkdown (\*.Rmd) should first be converted to \*.md.
 This can be achieved using the YAML at the top of a \*.Rmd file, either outputing md_document or keeping the *.md produced
-when outputting a htlm or pdf document:
-
+when outputting a htlm or pdf document (i.e. using `keep_md: true`):
 
 ```
 ---
@@ -54,9 +58,9 @@ output:
 ---
 ```
 
-The `govspeakr::convert_md()` function accepts a path to a \*.md file, along with the name of the subdirectory that contains any required images.
-This subdirectory should only include the images required for the document. The images_folder parameter defaults to "images/",
-so other names must be specified as below:
+The `govspeakr::convert_md()` function accepts a path to a \*.md file, along with the name of the subdirectory that contains the
+images required to produce the document.The images_folder parameter defaults to "images/", so other directory names must be specified
+as below:
 
 ```
 convert_md("C:Users/me/publications/statistical_publication.md", images_folder="figures")
