@@ -13,7 +13,7 @@ Specifically, it enables the user to convert markdown (\*.md) files to [govspeak
 which can be uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
 
 
-Chiefly, govspeak markup uses a different notation to reference images within the document:
+govspeak markup uses a different notation to reference images within the document:
 
 ```
 Figure 1
