@@ -8,7 +8,7 @@
 
 ## What is govspeakr?
 govspeakr is an R package that is designed to help users to develop
-[Reproproducible Analytical Pipelines (RAP)](https://gss.civilservice.gov.uk/events/introduction-to-reproducible-analytical-pipelines-rap-2/).
+[Reproproducible Analytical Pipelines (RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/).
 Specifically, it enables the user to convert markdown (\*.md) files to [govspeak markdown](http://govspeak-preview.herokuapp.com/guide),
 which can be uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
 
