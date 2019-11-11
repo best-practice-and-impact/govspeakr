@@ -9,9 +9,8 @@
 ## What is govspeakr?
 govspeakr is an R package that is designed to help users to develop
 [Reproproducible Analytical Pipelines (RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/).
-Specifically, it enables the user to convert markdown (\*.md) files to [govspeak markdown](http://govspeak-preview.herokuapp.com/guide),
-which can be uploaded to the Whitehall publisher ([gov.uk](https://www.gov.uk)).
-
+Specifically, it enables the user to convert markdown (\*.md) files to [govspeak markup](http://govspeak-preview.herokuapp.com/guide),
+which can be uploaded to the Whitehall publisher ([GOV.UK](https://www.gov.uk)).
 
 govspeak markup uses a different notation to reference images within the document:
 
@@ -33,6 +32,10 @@ Figure 2
 ![](images/image2.png)<!-- -->! 
 ```
 
+### What's the difference between govspeakr and [govdown](https://github.com/ukgovdatascience/govdown)?
+* {govdown} translates ordinary markdown into HTML, styled to look like GOV.UK. However, this HTML can't currently be submitted for publication on GOV.UK.
+* {govspeakr} translates ordinary markdown into a slightly different version of markdown (called 'govspeak') that can be pasted into   Whitehall Publisher for publication on GOV.UK.
+
 
 ## Usage
 
@@ -45,7 +48,7 @@ to order of appearance in the document. For example:
 
 Multiple images produced by a single chunk will be automatically numbered appropriately.
 
-The conversion acts on a markdown (\*.md) file only, so Rmarkdown (\*.Rmd) should first be converted to \*.md.
+The conversion acts on a markdown (\*.md) file only, so R markdown (\*.Rmd) should first be converted to \*.md.
 This can be achieved using the YAML at the top of a \*.Rmd file, either outputing md_document or keeping the *.md produced
 when outputting a htlm or pdf document (i.e. using `keep_md: true`):
 
@@ -67,7 +70,7 @@ convert_md("C:Users/me/publications/statistical_publication.md", images_folder="
 ```
 
 The converted \*.md file will be written to the original directory, with the file name suffixed with "_converted".
-This file can be interpreted by the whitehall publisher, along with the images contained in the images subdirectory.
+This file, along with the images contained in the images subdirectory, can be parsed by the Whitehall Publisher to produce HTML on GOV.UK.
 
 
 ## What is converted by govspeakr?
