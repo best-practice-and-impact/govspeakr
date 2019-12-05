@@ -6,10 +6,11 @@ Authors@R:
     c(person(given = "best-practice-and-impact",
              email = "gsshelp@statistics.gov.uk"),
      person(given = "Sebastian",
-            family = "Fox"),
+            family = "Fox",
+            role = "aut"),
      person(given = "David",
             family = "Foster",
-            role = "maintainer",
+            role = "cre",
             email = "david.foster@ons.gov.uk"))
 Description: Converts markdown scripts to a govspeak markdown
     that can be uploaded to the Whitehall publisher on the
