@@ -8,7 +8,9 @@ Authors@R:
      person(given = "Sebastian",
             family = "Fox"),
      person(given = "David",
-            family = "Foster"))
+            family = "Foster",
+            role = "maintainer",
+            email = "david.foster@ons.gov.uk"))
 Description: Converts markdown scripts to a govspeak markdown
     that can be uploaded to the Whitehall publisher on the
     gov.uk website. For use in the development of
