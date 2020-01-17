@@ -1,20 +1,26 @@
 #' Converts image file names to a dataframe, with a field containing the
 #' original image name and corresponding govdown reference
-#' @param imgs character vector of png files to be referenced in govdown format
+#' @param img_filenames character vector of files to be referenced in govdown format
 #'   (!!n). The filename must start and end with a number and have text in
 #'   between (eg, "1 abcd 1.png")
 #' @name generate_image_references
 #' @title Generate govdown image references
-generate_image_references <- function(img_files) {
-  image_references <- data.frame(image_file = img_files)
-  image_references$image_reference <- gsub("\\.png$", "", image_references$image_file)
+generate_image_references <- function(img_filenames) {
+  image_references <- data.frame(image_file = img_filenames)
+  # Strip file ext (not image specific)
+  image_references$image_reference <- tools::file_path_sans_ext(image_references$image_file)
+  
+  # Capture chunk number and image position within chunk
   image_references$pre_dec <- gsub("([0-9]+).*$", "\\1", image_references$image_reference)
   image_references$post_dec <- gsub(".*([0-9])$", "\\1", image_references$image_reference)
+  
+  # Convert to decimal for ranking
   image_references$combined <- as.numeric(paste0(image_references$pre_dec,
                                                  ".",
                                                  image_references$post_dec))
   image_references$image_reference <- paste0("!!", rank(image_references$combined))
-
+  
+  # Keep mapping of image files to govspeak references
   image_references <- image_references[, c("image_file", "image_reference")]
   return(image_references)
 }
@@ -31,6 +37,8 @@ convert_image_references <- function(image_references, md_file, images_folder) {
   govspeak_image_reference_file <- as.character(md_file)
   for (i in seq_along(image_references$image_file)) {
     file_name <- image_references$image_file[i]
+    
+    # Construct markdown reference to image file
     md_image_format <- paste0("!\\[\\]\\(",
                               images_folder,
                               "/",
@@ -39,7 +47,8 @@ convert_image_references <- function(image_references, md_file, images_folder) {
     
     govspeak_reference <- paste0(as.character(image_references$image_reference[i]),
                                  "\n")
-
+    
+    # Replace markdown image reference with govspeak reference
     govspeak_image_reference_file <- gsub(md_image_format,
                                           govspeak_reference,
                                           govspeak_image_reference_file)

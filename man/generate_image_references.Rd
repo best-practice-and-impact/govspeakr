@@ -4,10 +4,10 @@
 \alias{generate_image_references}
 \title{Generate govdown image references}
 \usage{
-generate_image_references(img_files)
+generate_image_references(img_filenames)
 }
 \arguments{
-\item{imgs}{character vector of png files to be referenced in govdown format
+\item{img_filenames}{character vector of files to be referenced in govdown format
 (!!n). The filename must start and end with a number and have text in
 between (eg, "1 abcd 1.png")}
 }
