@@ -4,6 +4,7 @@ Title: Convert standard markdown to govspeak markdown
 Version: 0.1.0
 Authors@R:
     c(person(given = "best-practice-and-impact",
+             role = "cph"
              email = "gsshelp@statistics.gov.uk"),
      person(given = "Sebastian",
             family = "Fox",
