@@ -1,12 +1,12 @@
 #' Converts image file names to a dataframe, with a field containing the
 #' original image name and corresponding govdown reference
-#' @param imgs character vector of png files to be referenced in govdown format
+#' @param img_filenames character vector of files to be referenced in govdown format
 #'   (!!n). The filename must start and end with a number and have text in
 #'   between (eg, "1 abcd 1.png")
 #' @name generate_image_references
 #' @title Generate govdown image references
-generate_image_references <- function(img_files) {
-  image_references <- data.frame(image_file = img_files)
+generate_image_references <- function(img_filenames) {
+  image_references <- data.frame(image_file = img_filenames)
   # Strip file ext (not image specific)
   image_references$image_reference <- tools::file_path_sans_ext(image_references$image_file)
   
