@@ -1,10 +1,9 @@
 # govspeakr
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build status](https://travis-ci.org/best-practice-and-impact/govspeakr.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/govspeakr)
 <!-- badges: end -->
-
-**ALPHA**: Please note that this package is the early stages of development.
 
 ## What is govspeakr?
 govspeakr is an R package that is designed to help users to develop
