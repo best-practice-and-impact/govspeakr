@@ -70,12 +70,12 @@ convert_callouts <- function(md_file) {
 
 #' Replace R markdown header with title only
 #' @param md_file string; markdown file text
-#' @name convert_title
+#' @name remove_header
 #' @title Replace R markdown header with ## title
-convert_title <- function(md_file) {
+remove_header <- function(md_file) {
   # Lazy match on header to extract title
   # Remove substitution if titles must be entered manually
-  cleaned_md_file <- gsub("---\\n.*?title:.*\"(.*)\".*?---\\n", "# \\1", md_file)
+  cleaned_md_file <- gsub("---\\n.*?---\\n", "", md_file)
 }
 
 
@@ -109,7 +109,7 @@ convert_md <- function(path, images_folder = "images", remove_blocks=FALSE) {
                                             md_file,
                                             images_folder)
   
-  govspeak_file <- convert_title(govspeak_file)
+  govspeak_file <- remove_header(govspeak_file)
   
   govspeak_file <- convert_callouts(govspeak_file)
   
