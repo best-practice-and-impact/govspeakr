@@ -2,7 +2,7 @@
 #' original image name and corresponding govdown reference
 #' @param img_filenames character vector of files to be referenced in govdown format
 #'   (!!n). The filename must start and end with a number and have text in
-#'   between (eg, "1 abcd 1.png")
+#'   between (eg, "1-abcd-1.png")
 #' @name generate_image_references
 #' @title Generate govdown image references
 generate_image_references <- function(img_filenames) {
@@ -11,8 +11,8 @@ generate_image_references <- function(img_filenames) {
   image_references$image_reference <- tools::file_path_sans_ext(image_references$image_file)
   
   # Capture chunk number and image position within chunk
-  if (!all(lapply(image_references$image_file, stringr::str_detect, "[0-9]+"))) {
-    stop("image chunk names must start with a number corresponding to their order in the file")
+  if (!all(as.logical(lapply(image_references$image_file, stringr::str_detect, "^[0-9]")))) {
+    stop("image chunk names must start with a number, which should correspond to their order in the .Rmd file")
   }
   image_references$pre_dec <- gsub("([0-9]+).*$", "\\1", image_references$image_reference)
   image_references$post_dec <- gsub(".*([0-9]+)$", "\\1", image_references$image_reference)
