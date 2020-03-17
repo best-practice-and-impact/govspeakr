@@ -15,11 +15,13 @@ Authors@R:
             email = "david.foster@ons.gov.uk"))
 Description: Converts standard markdown scripts to govspeak
     markup that can be uploaded to the Whitehall publisher
-    on the gov.uk website. For use in the development of
+    on the GOV.UK website. For use in the development of
     Reproducible Analytical Pipelines (RAP).
 License: MIT + file LICENSE
 URL: https://github.com/best-practice-and-impact/govspeakr
 BugReports: https://github.com/best-practice-and-impact/govspeakr/issues
+Imports:
+    stringr
 Suggests:
     testthat,
     rmarkdown,

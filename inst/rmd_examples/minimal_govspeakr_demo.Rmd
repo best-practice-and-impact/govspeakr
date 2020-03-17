@@ -1,0 +1,73 @@
+---
+title: "govspeakr minimal demo"
+author: "David Foster"
+date: "27 February 2020"
+output:
+    html_document:
+        keep_md: true  # Essential for producting markdown - this is is the file that will be converted
+        theme: null
+        highlight: null
+        mathjax: null
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+  # Prevent creation of warning or other message blocks - should be used only
+  # when publishing output, so that you remain aware of warnings when developing a document
+  # Alternatively, gpovspeakr::convert_md(..., remove_blocks=TRUE) can be used to strip blocks from the markdown output
+  echo=FALSE,
+  cache=FALSE,
+  warning = FALSE,
+  message = FALSE,
+  
+  # Image size rules for GOV.uk
+  # https://www.gov.uk/guidance/how-to-publish-on-gov-uk/images-and-videos
+  fig.width=960 / 72,
+  fig.height=640 / 72,
+  dpi=72,
+  
+  # The default path for govspeakr::convert_md() to search for images is ./images
+  fig.path = "images/"
+  )
+
+# Ensure that tables are output as markdown - can be achieved using knitr::kable (see example below)
+options(knitr.table.format = "markdown")
+```
+
+## {govspeakr} Demo
+
+This is a minimal demonstration of {govspeakr} usage, based on the default R markdown template in Rstudio.
+
+To try this demo:
+
+1. knit this Rmarkdown file. This will produce HTML (.html) and Markdown (.md) outputs.
+2. run `govspeakr::convert_md("PATH/minimal_govspeakr_demo.md")`, where PATH refers to the path to the Markdown file output.
+This will generate `minimal_demo_converted.md`. Note that this file will contain the govspeak image reference notation !!1 to reference the first image in the `./images` directory.
+
+To prevent generation of a HTML copy, use the following in the YAML header of this file:
+`
+output:
+  md_document
+`
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+# Note that the output format of tables should be markdown
+knitr::kable(summary(cars))
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r 1-pressure, echo=FALSE}
+# Note that this chunk is named `n-description`, where n represents the position of this image chunk in the document
+# This is required for image chunks (e.g. next image chunk would be 2-stuff)
+# Multiple images are allowed in a single chunk - their order within the chunk is handled automatically
+plot(pressure)
+```
