@@ -78,7 +78,6 @@ Currently the following markdown elements are converted to govspeak using `govsp
 
 * Image references
 * Single line block quotes/callouts
-* R markdown titles (from header)
 * (optional) removes remaining multiline blocks (i.e. within three backticks), including package warnings
 
 For other elements, please see the [guidance](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown) for preparation of markdown for the Whitehall publisher.
