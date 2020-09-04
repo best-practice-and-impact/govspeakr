@@ -27,11 +27,13 @@ The `govspeakr::convert_md()` function converts the standard Markdown image refe
 
 ```
 Figure 1
-![](images/image1.png)<!-- -->!
+![](images/image1.png)<!-- -->
 
 Figure 2
-![](images/image2.png)<!-- -->! 
+![](images/image2.png)<!-- -->
 ```
+> Note: an empty comment is used to indicate references for conversion.
+
 
 ### What's the difference between govspeakr and [govdown](https://github.com/ukgovdatascience/govdown)?
 * {govdown} translates ordinary Markdown into HTML, styled to look like GOV.UK. However, this HTML can't currently be submitted for publication on GOV.UK.
