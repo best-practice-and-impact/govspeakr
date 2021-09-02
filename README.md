@@ -135,6 +135,7 @@ Currently the following markdown elements are converted to govspeak using `govsp
 
 * Image references
 * Single line block quotes/callouts
+* Headers
 * (optional) removes remaining multiline blocks (i.e. within three backticks), including package warnings
 
 Please raise an issue if you would like to request additional features.
