@@ -26,6 +26,8 @@ convert_md <- function(path,
   
   govspeak_file <- convert_callouts(govspeak_file)
   
+  govspeak_file <- convert_headings(govspeak_file)
+  
   if (remove_blocks) {
     govspeak_file <- remove_rmd_blocks(govspeak_file)
   }
