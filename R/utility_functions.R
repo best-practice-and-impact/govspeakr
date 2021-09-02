@@ -70,6 +70,18 @@ convert_callouts <- function(md_file) {
   converted_md_file <- gsub("(\\n)>[ ]*(.*?\\n)", "\\1^\\2", md_file)
 }
 
+#' Convert markdown heading sytax to govspeak
+#' @param md_file string; markdown file text
+#' @name convert_headings
+#' @title Convert markdown heading syntax to govspeak
+convert_headings <- function(md_file) {
+  # Lazy match on lines starting with ">", which are then flanked with "^"
+  # Currently only catches single line callouts
+  cleaned_md_file <- gsub("([^\n]*\n)(===*)","## \\1",md_file)
+  cleaned_md_file <- gsub("([^\n]*\n)(---*)","### \\1",cleaned_md_file)
+  return(cleaned_md_file)
+}
+
 
 #' Replace R markdown header with title only
 #' @param md_file string; markdown file text
